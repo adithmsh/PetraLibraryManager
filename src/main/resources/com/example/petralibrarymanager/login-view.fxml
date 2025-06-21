@@ -18,8 +18,8 @@
             <Insets bottom="50.0" />
          </VBox.margin>
       </Label>
-      <Label text="Username" />
-      <TextField fx:id="usernameField" prefHeight="25.0" prefWidth="145.0">
+      <Label text="Username or Email" />
+      <TextField fx:id="identifierField" prefHeight="25.0" prefWidth="145.0">
          <VBox.margin>
             <Insets />
          </VBox.margin>
@@ -30,7 +30,7 @@
          </VBox.margin>
       </Label>
       <PasswordField fx:id="passwordField" />
-      <Label fx:id="messageLabel" layoutX="136.0" layoutY="198.0" text="The username or password is not found. Please try again!" textFill="#b53333">
+      <Label fx:id="messageLabel" layoutX="136.0" layoutY="198.0" text="The username/email or password is not found. Please try again!" textFill="#b53333">
          <font>
             <Font name="System Italic" size="12.0" />
          </font>

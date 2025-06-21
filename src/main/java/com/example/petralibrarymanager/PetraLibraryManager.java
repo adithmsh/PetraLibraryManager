@@ -8,7 +8,7 @@ import javafx.scene.image.Image;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class PetraLibraryManager extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
@@ -16,9 +16,15 @@ public class HelloApplication extends Application {
             since the dashboard view of the app depends on the type of user.
             we need to have two separate dashboard views.
 
+            Update: We will distinguish between three types of users(roles):
+             - Member,  : Good:>
+             - Staff,
+             - Admin    : extends the abilities of the staff, but includes the ability manage users and global policies.
+
+            Therefore, there will be two dashboards. Member and Non-Member. Since the staff role is pretty similar to the admin role.
          */
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(PetraLibraryManager.class.getResource("login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
         /* MOTHER FUCKER, I CAN'T FIXED THIS... PLEASE HELP! */

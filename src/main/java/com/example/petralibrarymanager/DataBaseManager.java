@@ -10,7 +10,7 @@ public class DataBaseManager {
 
 
     // we store the user credentials once they have successfully login.
-    static String username, password, privilege;
+    static String identifier, email, password, role;
 
     public static boolean connect(String user, String password) {
         try {

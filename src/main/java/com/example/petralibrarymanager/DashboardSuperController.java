@@ -1,12 +1,21 @@
 package com.example.petralibrarymanager;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
-public class DashboardAdminController {
+import java.io.IOException;
+
+public class DashboardSuperController {
         @FXML
         private VBox sidebar;
+
+        @FXML private Button logoutButton;
 
         @FXML
         private AnchorPane mainContent;
@@ -32,4 +41,23 @@ public class DashboardAdminController {
         // public void loadPage(Node node) {
         //     mainContent.getChildren().setAll(node);
         // }
+
+    @FXML protected void onLogoutClicked() {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("login-view.fxml"));
+        try {
+            // Load the new FXML
+            Parent loginRoot = loader.load();
+
+            // Get the stage from the button
+            Stage stage = (Stage) logoutButton.getScene().getWindow();
+
+            // Set the new scene
+            Scene loginScene = new Scene(loginRoot);
+            stage.setScene(loginScene);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }

@@ -67,7 +67,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.petralibrarymanager/com.example.petralibrarymanager.HelloApplication
+                                com.example.petralibrarymanager/com.example.petralibrarymanager.PetraLibraryManager
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

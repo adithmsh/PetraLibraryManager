@@ -18,7 +18,7 @@ import java.sql.SQLException;
 public class LoginController {
 
     @FXML private Button loginButton;
-    @FXML private TextField usernameField;
+    @FXML private TextField identifierField;
     @FXML private PasswordField passwordField;
     @FXML private Label messageLabel;
 
@@ -29,38 +29,45 @@ public class LoginController {
 
     @FXML
     protected void onLoginClicked() {
-        System.out.println(usernameField.getText());
+        System.out.println(identifierField.getText());
         System.out.println(passwordField.getText());
         System.out.println("Hello, World");
 
-        String username, password;
-        username = usernameField.getText(); password = passwordField.getText();
-        if(username.isEmpty() || password.isEmpty()) {
+        String identifier, password_hash;
+        identifier = identifierField.getText(); password_hash = passwordField.getText();
+        if(identifier.isEmpty() || password_hash.isEmpty()) {
             messageLabel.setVisible(true);
             messageLabel.setText("Please fill in the fields properly!");
         } else {
             try {
-                String st = "SELECT * FROM users WHERE username = ? AND password = ?;";
-                PreparedStatement qst = DataBaseManager.conn.prepareStatement(st);
-                qst.setString(1, username);
-                qst.setString(2, password);
 
+                String st = null;
+                /* if the identifier is an email, then we have to check using the email. Otherwise, use username.*/
+                if(identifier.contains("@")) {
+                    st = "SELECT * FROM users WHERE email = ? AND password_hash = ?;";
+                } else {
+                    st = "SELECT * FROM users WHERE name = ? AND password_hash = ?;";
+                }
+
+                PreparedStatement qst = DataBaseManager.conn.prepareStatement(st);
+                qst.setString(1, identifier);
+                qst.setString(2, password_hash);
                 ResultSet rset = qst.executeQuery();
 
                 if(rset.next()) {
-                    DataBaseManager.username = username;
-                    DataBaseManager.password = password;
-                    DataBaseManager.privilege = rset.getString("privilege");
-                    System.out.println("user is found! " + "privilege: " + DataBaseManager.privilege);
+                    DataBaseManager.identifier = identifier;
+                    DataBaseManager.password = password_hash;
+                    DataBaseManager.role = rset.getString("role");
+                    System.out.println("user is found! " + "privilege: " + DataBaseManager.role);
 
 
 
 
                     FXMLLoader loader = null;
-                    if(DataBaseManager.privilege.equalsIgnoreCase("admin")) {
-                        loader = new FXMLLoader(getClass().getResource("dashboard-admin-view.fxml"));
+                    if(DataBaseManager.role.equalsIgnoreCase("admin")) {
+                        loader = new FXMLLoader(getClass().getResource("dashboard-super-view.fxml"));
                     } else {
-                        loader = new FXMLLoader(getClass().getResource("dashboard-admin-view.fxml"));
+                        loader = new FXMLLoader(getClass().getResource("dashboard-super-view.fxml"));
                     }
 
                     try {
@@ -83,7 +90,7 @@ public class LoginController {
 
                 } else {
                     messageLabel.setVisible(true);
-                    messageLabel.setText("The username or password is not found. Please try again!");
+                    messageLabel.setText("The username/email or password is not found. Please try again!");
                 }
 
             } catch (SQLException e) {
