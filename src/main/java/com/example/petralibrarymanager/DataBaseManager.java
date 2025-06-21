@@ -7,6 +7,11 @@ import java.sql.SQLException;
 public class DataBaseManager {
     static String defaultURL = "jdbc:postgresql://localhost:5432/petralms";
     static Connection conn = null;
+
+
+    // we store the user credentials once they have successfully login.
+    static String username, password, privilege;
+
     public static boolean connect(String user, String password) {
         try {
             conn = DriverManager.getConnection(defaultURL, user, password);

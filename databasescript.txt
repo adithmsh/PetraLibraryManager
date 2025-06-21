@@ -1,0 +1,7 @@
+CREATE TABLE users(
+ username VARCHAR(255),
+ password VARCHAR(255),
+ privilege VARCHAR(255) 
+);
+
+INSERT INTO users(username, password, privilege) VALUES ('adithmsh', 'adith123', 'admin');

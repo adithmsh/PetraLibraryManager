@@ -1,11 +1,16 @@
 package com.example.petralibrarymanager;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -43,7 +48,39 @@ public class LoginController {
                 ResultSet rset = qst.executeQuery();
 
                 if(rset.next()) {
-                    System.out.println("user is found!");
+                    DataBaseManager.username = username;
+                    DataBaseManager.password = password;
+                    DataBaseManager.privilege = rset.getString("privilege");
+                    System.out.println("user is found! " + "privilege: " + DataBaseManager.privilege);
+
+
+
+
+                    FXMLLoader loader = null;
+                    if(DataBaseManager.privilege.equalsIgnoreCase("admin")) {
+                        loader = new FXMLLoader(getClass().getResource("dashboard-admin-view.fxml"));
+                    } else {
+                        loader = new FXMLLoader(getClass().getResource("dashboard-admin-view.fxml"));
+                    }
+
+                    try {
+                        // Load the new FXML
+                        Parent dashboardRoot = loader.load();
+
+                        // Get the stage from the button
+                        Stage stage = (Stage) loginButton.getScene().getWindow();
+
+                        // Set the new scene
+                        Scene dashboardScene = new Scene(dashboardRoot);
+                        stage.setScene(dashboardScene);
+//                        stage.setTitle("Petra LibraryDashboard");
+
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+
+
+
                 } else {
                     messageLabel.setVisible(true);
                     messageLabel.setText("The username or password is not found. Please try again!");

@@ -12,11 +12,16 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
+        /* @adith:
+            since the dashboard view of the app depends on the type of user.
+            we need to have two separate dashboard views.
 
+         */
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
+        /* MOTHER FUCKER, I CAN'T FIXED THIS... PLEASE HELP! */
         Image icon = new Image(getClass().getResourceAsStream("icon.jpeg"));
 
         stage.setTitle("Petra Library Manager");
