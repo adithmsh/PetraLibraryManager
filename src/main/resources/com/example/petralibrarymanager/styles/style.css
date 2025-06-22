@@ -37,7 +37,12 @@
 
 /* Main dashboard container */
 .dashboard-container-upper {
-    -fx-background-color: linear-gradient(to bottom right, rgba(150, 150, 150, 0.35), rgba(236, 255, 245, 0.2));
+        -fx-background-color: linear-gradient(
+            from 0% 0% to 100% 100%,
+            rgba(255, 224, 178, 0.35),  /* soft peach */
+            rgba(255, 204, 128, 0.3),   /* pastel orange */
+            rgba(255, 183, 77, 0.25)    /* deeper warm pastel */
+        );
     -fx-background-radius: 0;
     -fx-border-radius: 0;
     -fx-border-color: rgba(255, 255, 255, 0.3);
@@ -193,5 +198,82 @@
 .custom-textfield:hover {
     -fx-border-color: rgba(100, 149, 237, 0.45);
 }
+
+.acrylic-vbox {
+    -fx-background-color: rgba(255, 255, 255, 0.18); /* frosted white acrylic */
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-color: rgba(255, 255, 255, 0.35);
+    -fx-border-width: 1;
+
+    -fx-padding: 20;
+    -fx-spacing: 10;
+
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.12), 10, 0.3, 0, 4);
+}
+
+.acrylic-vbox-dark {
+    -fx-background-color: rgba(30, 30, 30, 0.25);  /* semi-transparent dark */
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-color: rgba(255, 255, 255, 0.2);
+    -fx-border-width: 1;
+
+    -fx-padding: 20;
+    -fx-spacing: 10;
+
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 12, 0.3, 0, 5);
+}
+
+
+.acrylic-vbox-dark-blue {
+    -fx-background-color: linear-gradient(
+        from 0% 0% to 100% 100%,
+        rgba(40, 60, 90, 0.3),
+        rgba(30, 45, 70, 0.25)
+    );
+}
+.acrylic-vbox-dark-purple {
+    -fx-background-color: linear-gradient(
+        from 0% 0% to 100% 100%,
+        rgba(50, 40, 80, 0.3),
+        rgba(35, 25, 65, 0.25)
+    );
+}
+
+.acrylic-vbox-dark-orange {
+    -fx-background-color: linear-gradient(
+        from 0% 0% to 100% 100%,
+        rgba(80, 50, 30, 0.3),
+        rgba(60, 40, 20, 0.25)
+    );
+}
+
+
+.title-label {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
+
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 2, 0.3, 0, 1);
+    -fx-padding: 4 12 8 12;
+}
+
+.login-section {
+    -fx-background-color: rgba(150, 100, 150, 0.35); /* frosted dark glass */
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+
+    -fx-border-color: rgba(255, 255, 255, 0.35);  /* brighter border */
+    -fx-border-width: 3;  /* thicker for visual distinction */
+
+    -fx-padding: 24;
+    -fx-spacing: 16;
+
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 14, 0.3, 0, 5);
+}
+
+
+
 
 

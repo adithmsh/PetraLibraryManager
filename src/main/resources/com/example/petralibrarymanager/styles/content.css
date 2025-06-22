@@ -2,7 +2,7 @@
 .content-root {
     -fx-padding: 0;
     -fx-hgap: 10;
-    -fx-vgap: 20;
+    -fx-vgap: 0;
     -fx-alignment: TOP_CENTER;
 }
 
@@ -33,7 +33,7 @@
     -fx-background-color: rgba(255, 255, 255, 0.15); /* Soft acrylic background */
     -fx-background-radius: 20;
     -fx-border-radius: 20;
-    -fx-padding: 0 0 0 10;
+    -fx-padding: 10 10 10 10;
     -fx-spacing: 0;
     -fx-border-color: rgba(255, 255, 255, 0.3);
     -fx-border-width: 2;
@@ -138,12 +138,7 @@
 
 .scroll-pane {
     -fx-background-color: transparent;
-    -fx-border-color: rgba(255, 255, 255, 0.3);
-    -fx-border-width: 1;
-    -fx-background-radius: 16;
-    -fx-border-radius: 16;
-    -fx-padding: 0;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.06), 10, 0.2, 0, 2);
+    -fx-padding: 0 0 0 0;
 }
 
 .scroll-pane .viewport {
@@ -179,5 +174,83 @@
     -fx-background-color: transparent;
 }
 
+.acrylic-button {
+    -fx-background-color: linear-gradient(
+        from 0% 0% to 100% 100%,
+        rgba(255, 255, 255, 0.25),
+        rgba(240, 240, 240, 0.2)
+    );
+    -fx-text-fill: #2f2f2f;
+    -fx-font-size: 14px;
 
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: rgba(255, 255, 255, 0.4);
+    -fx-border-width: 1;
+
+    -fx-padding: 8 20;
+    -fx-cursor: hand;
+
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.12), 6, 0.4, 0, 2);
+    -fx-transition: all 0.2s ease-in-out;
+}
+
+.acrylic-button-blue {
+    -fx-background-color: linear-gradient(
+        from 0% 0% to 100% 100%,
+        rgba(174, 203, 250, 0.35),
+        rgba(199, 220, 255, 0.3)
+    );
+}
+
+.acrylic-button-green {
+    -fx-background-color: linear-gradient(
+        from 0% 0% to 100% 100%,
+        rgba(178, 235, 201, 0.35),
+        rgba(129, 201, 149, 0.3)
+    );
+}
+
+.acrylic-button-orange {
+    -fx-background-color: linear-gradient(
+        from 0% 0% to 100% 100%,
+        rgba(255, 224, 178, 0.4),
+        rgba(255, 183, 77, 0.3)
+    );
+}
+
+.acrylic-button-pink {
+    -fx-background-color: linear-gradient(
+        from 0% 0% to 100% 100%,
+        rgba(255, 204, 229, 0.4),
+        rgba(244, 143, 177, 0.3)
+    );
+}
+
+.acrylic-button-purple {
+    -fx-background-color: linear-gradient(
+        from 0% 0% to 100% 100%,
+        rgba(225, 190, 255, 0.4),
+        rgba(204, 153, 255, 0.3)
+    );
+}
+
+
+.acrylic-button:hover {
+    -fx-background-color: linear-gradient(
+        from 0% 0% to 100% 100%,
+        rgba(255, 255, 255, 0.35),
+        rgba(240, 240, 240, 0.3)
+    );
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.18), 8, 0.5, 0, 3);
+}
+
+.acrylic-button:pressed {
+    -fx-background-color: linear-gradient(
+        from 0% 0% to 100% 100%,
+        rgba(220, 220, 220, 0.4),
+        rgba(200, 200, 200, 0.35)
+    );
+    -fx-translate-y: 1;
+}
 

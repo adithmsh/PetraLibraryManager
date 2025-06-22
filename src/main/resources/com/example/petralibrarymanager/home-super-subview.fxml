@@ -5,14 +5,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.VBox?>
 
 
 <VBox prefHeight="744.0" prefWidth="832.0" styleClass="content-root" stylesheets="@styles/content.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label styleClass="section-title" text="HOME" />
-      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="837.0" prefWidth="812.0">
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="840.0" prefWidth="832.0" vbarPolicy="NEVER">
          <content>
             <VBox prefHeight="458.0" prefWidth="791.0">
                <children>
@@ -96,6 +95,9 @@
                            </children>
                         </HBox>
                      </children>
+                     <VBox.margin>
+                        <Insets bottom="50.0" />
+                     </VBox.margin>
                   </VBox>
                   <VBox layoutX="10.0" layoutY="264.0" prefHeight="200.0" prefWidth="100.0" styleClass="section">
                      <children>
@@ -178,7 +180,9 @@
                </children>
             </VBox>
          </content>
+         <VBox.margin>
+            <Insets left="20.0" />
+         </VBox.margin>
       </ScrollPane>
-      <TilePane prefHeight="200.0" prefWidth="200.0" />
    </children>
 </VBox>

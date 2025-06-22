@@ -19,67 +19,67 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <HBox prefHeight="735.0" prefWidth="999.0" styleClass="acrylic-vbox">
+            <HBox prefHeight="735.0" prefWidth="999.0">
                <children>
-                  <VBox fx:id="sidebar" prefHeight="558.0" prefWidth="227.0" styleClass="root-dashboard-pane">
+                  <VBox fx:id="sidebar" prefHeight="729.0" prefWidth="301.0" styleClass="root-dashboard-pane">
                      <children>
-                        <Button fx:id="homeButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHomeClicked" text="Home">
-                           <styleClass>
-                              <String fx:value="dashboard-button" />
-                              <String fx:value="acrylic-red" />
-                           </styleClass>
-                           <VBox.margin>
-                              <Insets bottom="6.0" />
-                           </VBox.margin></Button>
-                        <Button fx:id="catalogButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onCatalogClicked" text="Catalog Management">
-                           <styleClass>
-                              <String fx:value="dashboard-button" />
-                              <String fx:value="acrylic-blue" />
-                           </styleClass>
-                           <VBox.margin>
-                              <Insets bottom="6.0" />
-                           </VBox.margin></Button>
-                        <Button fx:id="circulationsButton" layoutX="10.0" layoutY="35.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onCirculationsClicked" text="Circulations(Borrow/Return)">
-                           <styleClass>
-                              <String fx:value="dashboard-button" />
-                              <String fx:value="acrylic-blue" />
-                           </styleClass>
-                           <VBox.margin>
-                              <Insets bottom="6.0" />
-                           </VBox.margin></Button>
-                        <Button fx:id="reservationsButton" layoutX="30.0" layoutY="117.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onReservationsClicked" text="Reservations">
-                           <styleClass>
-                              <String fx:value="dashboard-button" />
-                              <String fx:value="acrylic-blue" />
-                           </styleClass>
+                        <Button fx:id="homeButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHomeClicked" stylesheets="@styles/content.css" text="Home">
                            <VBox.margin>
                               <Insets bottom="6.0" />
                            </VBox.margin>
-                        </Button>
-                        <Button fx:id="finesButton" layoutX="30.0" layoutY="88.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onFinesClicked" text="Fines">
                            <styleClass>
-                              <String fx:value="dashboard-button" />
-                              <String fx:value="acrylic-blue" />
+                              <String fx:value="acrylic-button" />
+                              <String fx:value="acrylic-button-orange" />
+                           </styleClass></Button>
+                        <Button fx:id="catalogButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onCatalogClicked" stylesheets="@styles/content.css" text="Catalog Management">
+                           <VBox.margin>
+                              <Insets bottom="6.0" />
+                           </VBox.margin>
+                           <styleClass>
+                              <String fx:value="acrylic-button" />
+                              <String fx:value="acrylic-button-purple" />
+                           </styleClass></Button>
+                        <Button fx:id="circulationsButton" layoutX="10.0" layoutY="35.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onCirculationsClicked" stylesheets="@styles/content.css" text="Circulations(Borrow/Return)">
+                           <VBox.margin>
+                              <Insets bottom="6.0" />
+                           </VBox.margin>
+                           <styleClass>
+                              <String fx:value="acrylic-button" />
+                              <String fx:value="acrylic-button-purple" />
+                           </styleClass></Button>
+                        <Button fx:id="reservationsButton" layoutX="30.0" layoutY="117.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onReservationsClicked" stylesheets="@styles/content.css" text="Reservations">
+                           <VBox.margin>
+                              <Insets bottom="6.0" />
+                           </VBox.margin>
+                           <styleClass>
+                              <String fx:value="acrylic-button" />
+                              <String fx:value="acrylic-button-purple" />
                            </styleClass>
+                        </Button>
+                        <Button fx:id="finesButton" layoutX="30.0" layoutY="88.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onFinesClicked" stylesheets="@styles/content.css" text="Fines">
                            <VBox.margin>
                               <Insets bottom="315.0" />
                            </VBox.margin>
+                           <styleClass>
+                              <String fx:value="acrylic-button" />
+                              <String fx:value="acrylic-button-purple" />
+                           </styleClass>
                         </Button>
-                        <Button fx:id="settingsButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSettingClicked" text="Settings">
+                        <Button fx:id="settingsButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSettingClicked" stylesheets="@styles/content.css" text="Settings">
                            <VBox.margin>
                               <Insets bottom="6.0" />
                            </VBox.margin>
                            <styleClass>
-                              <String fx:value="dashboard-button" />
-                              <String fx:value="acrylic-green" />
+                              <String fx:value="acrylic-button" />
+                              <String fx:value="acrylic-button-pink" />
                            </styleClass></Button>
-                        <Button fx:id="logoutButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onLogoutClicked" text="Logout">
+                        <Button fx:id="logoutButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onLogoutClicked" stylesheets="@styles/content.css" text="Logout">
                            <VBox.margin>
                               <Insets bottom="6.0" />
                            </VBox.margin>
                            <styleClass>
-                              <String fx:value="dashboard-button" />
-                              <String fx:value="acrylic-green" />
+                              <String fx:value="acrylic-button" />
+                              <String fx:value="acrylic-button-pink" />
                            </styleClass></Button>
                      </children>
                   </VBox>
