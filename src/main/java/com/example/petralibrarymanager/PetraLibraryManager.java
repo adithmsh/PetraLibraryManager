@@ -1,14 +1,20 @@
 package com.example.petralibrarymanager;
 
+import com.example.petralibrarymanager.database.DataBaseManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
 
 import java.io.IOException;
 
+
 public class PetraLibraryManager extends Application {
+
+    static double width, height;
     @Override
     public void start(Stage stage) throws IOException {
 
@@ -26,7 +32,7 @@ public class PetraLibraryManager extends Application {
 
         FXMLLoader fxmlLoader = new FXMLLoader(PetraLibraryManager.class.getResource("login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-
+//        scene.getStylesheets().add(getClass().getResource("styles/style.css").toExternalForm());
         /* MOTHER FUCKER, I CAN'T FIXED THIS... PLEASE HELP! */
         Image icon = new Image(getClass().getResourceAsStream("icon.jpeg"));
 
@@ -34,8 +40,26 @@ public class PetraLibraryManager extends Application {
         stage.getIcons().add(icon); // Set the
 
 
+        // Get the primary screen bounds
+        Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+
+// Calculate percentage-based width and height
+        width = screenBounds.getWidth() * 0.5;   // 80% of screen width
+        height = screenBounds.getHeight() * 0.6; // 80% of screen height
+
+// Set stage size
+        stage.setWidth(width);
+        stage.setHeight(height);
+
+// Optional: center the stage on the screen
+        stage.setX((screenBounds.getWidth() - width) / 2);
+        stage.setY((screenBounds.getHeight() - height) / 2);
+
+
         stage.sizeToScene();
         stage.setResizable(false);
+
+
         stage.setScene(scene);
         stage.show();
     }

@@ -5,43 +5,59 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="loginview" alignment="CENTER" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.petralibrarymanager.LoginController">
+<StackPane fx:id="rootPane" styleClass="root" stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.petralibrarymanager.LoginController">
    <children>
-      <Label text="Login to Petra Library Manager">
-         <font>
-            <Font name="AGaramondPro-Bold" size="20.0" />
-         </font>
-         <VBox.margin>
-            <Insets bottom="50.0" />
-         </VBox.margin>
-      </Label>
-      <Label text="Username or Email" />
-      <TextField fx:id="identifierField" prefHeight="25.0" prefWidth="145.0">
-         <VBox.margin>
-            <Insets />
-         </VBox.margin>
-      </TextField>
-      <Label text="Password">
-         <VBox.margin>
-            <Insets top="20.0" />
-         </VBox.margin>
-      </Label>
-      <PasswordField fx:id="passwordField" />
-      <Label fx:id="messageLabel" layoutX="136.0" layoutY="198.0" text="The username/email or password is not found. Please try again!" textFill="#b53333">
-         <font>
-            <Font name="System Italic" size="12.0" />
-         </font>
-      </Label>
-      <Button fx:id="loginButton" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onLoginClicked" text="LOGIN">
-         <VBox.margin>
-            <Insets top="50.0" />
-         </VBox.margin>
-      </Button>
+      <ImageView fx:id="bgImage1" fitHeight="579.0" fitWidth="824.0" pickOnBounds="true">
+         <image>
+            <Image url="@images/bgs/6.jpg" />
+         </image>
+      </ImageView>
+      <VBox fx:id="loginVBox" alignment="CENTER" styleClass="login-container2" stylesheets="@styles/style.css">
+         <padding>
+            <Insets bottom="50.0" left="20.0" right="20.0" top="50.0" />
+         </padding>
+         <children>
+            <Label styleClass="title-label" text="Login to Petra Library Manager">
+               <font>
+                  <Font name="AGaramondPro-Bold" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="50.0" />
+               </VBox.margin>
+            </Label>
+            <Label styleClass="form-label" text="Username or Email" />
+            <TextField fx:id="identifierField" prefHeight="25.0" prefWidth="145.0" styleClass="custom-textfield">
+               <VBox.margin>
+                  <Insets left="80.0" right="80.0" />
+               </VBox.margin></TextField>
+            <Label styleClass="form-label" text="Password">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin></Label>
+            <PasswordField fx:id="passwordField" styleClass="custom-textfield">
+               <VBox.margin>
+                  <Insets left="80.0" right="80.0" />
+               </VBox.margin></PasswordField>
+            <Label fx:id="messageLabel" styleClass="error-label" text="The username/email or password is not found. Please try again!" textFill="#b53333">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Button fx:id="loginButton" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onLoginClicked" styleClass="action-button" text="LOGIN">
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <StackPane.margin>
+            <Insets bottom="100.0" left="200.0" right="200.0" top="100.0" />
+         </StackPane.margin>
+      </VBox>
    </children>
-   <padding>
-      <Insets bottom="50.0" left="20.0" right="20.0" top="50.0" />
-   </padding>
-</VBox>
+</StackPane>

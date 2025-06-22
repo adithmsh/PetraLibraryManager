@@ -1,0 +1,187 @@
+/* style.css */
+
+.root {
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-text-fill: white;
+}
+
+/* Background overlay if needed */
+StackPane {
+    -fx-background-color: transparent;
+}
+
+.glass-vbox {
+    -fx-background-color: rgba(255, 255, 255, 0.15); /* white with 15% opacity */
+    -fx-background-radius: 10;
+    -fx-padding: 20;
+}
+
+.acrylic-vbox {
+    -fx-background-color: rgba(255, 255, 255, 0.4); /* White with 20% opacity
+    /* -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, rgba(0,0,0,0.4), rgba(0,0,0,0.2)); */
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 20;
+    -fx-border-color: rgba(255, 255, 255, 0.3);
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 20, 0.5, 0, 0);
+}
+
+.bluish-acrylic-vbox {
+    -fx-background-color: rgba(30, 30, 30, 0.3); /* Darker tone */
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-padding: 20;
+    -fx-border-color: rgba(255, 255, 255, 0.1);
+    -fx-border-width: 1;
+}
+
+
+.heading-light {
+    -fx-font-size: 48px;
+    -fx-font-weight: 300;
+    -fx-text-fill: rgba(255, 255, 255, 0.8);
+}
+
+.heading-bold {
+    -fx-font-size: 48px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.subheading {
+    -fx-font-size: 16px;
+    -fx-text-fill: #CCCCCC;
+    -fx-padding: 10 0 20 0;
+}
+
+/* Main login VBox container */
+.login-container {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: rgba(255, 255, 255, 0.3);
+    -fx-border-width: 1.5;
+    -fx-padding: 40;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 20, 0.2, 0, 6);
+    -fx-spacing: 20;
+}
+
+/* Header text
+.title-label {
+    -fx-font-family: "Georgia", "Serif";
+    -fx-font-size: 22px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+} */
+
+/* Input fields */
+.text-field, .password-field {
+    -fx-background-color: rgba(255, 255, 255, 0.15);
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: rgba(255, 255, 255, 0.5);
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-color: rgba(255, 255, 255, 0.3);
+    -fx-border-width: 1;
+    -fx-padding: 8 12;
+    -fx-font-size: 13px;
+}
+
+/* Login Button */
+.login-button {
+    -fx-background-color: linear-gradient(to right, #5C6BC0, #3949AB);
+    -fx-background-radius: 6;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 8 16;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0.3, 0, 2);
+}
+.login-button:hover {
+    -fx-background-color: linear-gradient(to right, #7986CB, #5C6BC0);
+}
+
+/* Error message */
+.error-label {
+    -fx-text-fill: #e57373;
+    -fx-font-style: italic;
+    -fx-font-size: 12px;
+}
+
+
+.action-button {
+    -fx-background-color: transparent;
+    -fx-border-color: rgba(255, 255, 255, 0.7);
+    -fx-text-fill: white;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 10 20;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 4, 0.2, 0, 2);
+    -fx-transition: all 0.25s ease-in-out; /* Note: JavaFX does not support this in CSS */
+}
+
+.action-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.85); /* soft white */
+    -fx-text-fill: #1a1a1a; /* soft black */
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 6, 0.3, 0, 3);
+}
+
+
+/* Form field labels (Username, Password) */
+.form-label {
+    -fx-text-fill: white; /* Brighter and more visible */
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 2, 0.5, 0, 1); /* Subtle shadow to improve readability */
+    -fx-label-padding: 0 0 4 0;
+}
+
+.title-label {
+    -fx-text-fill: white;
+    -fx-font-family: "Georgia", "Serif";
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    /*-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 4, 0.5, 0, 2); */
+    -fx-padding: 10 0 20 0;
+    -fx-alignment: center;
+}
+
+.custom-textfield {
+    -fx-background-color: rgba(255, 255, 255, 0.12); /* translucent white */
+    -fx-text-fill: white; /* visible text */
+    -fx-prompt-text-fill: rgba(255, 255, 255, 0.4); /* faded placeholder */
+    -fx-border-color: rgba(255, 255, 255, 0.6); /* brighter border */
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 6 10;
+    -fx-font-size: 14px;
+}
+
+.login-container2 {
+    -fx-background-color: rgba(255, 255, 255, 0.08); /* subtle acrylic */
+    -fx-background-radius: 15;
+    -fx-border-color: rgba(255, 255, 255, 0.6); /* brighter contrasting border */
+    -fx-border-width: 2;
+    -fx-border-radius: 15;
+    -fx-padding: 30;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 16, 0.2, 0, 6);
+}
+
+.nav-button {
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+    -fx-font-size: 13px;
+    -fx-padding: 6 14;
+    -fx-border-width: 0 0 2 0;
+    -fx-border-color: transparent;
+}
+
+.nav-button:hover {
+    -fx-border-color: white;
+}

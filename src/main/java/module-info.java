@@ -6,4 +6,6 @@ module com.example.petralibrarymanager {
 
     opens com.example.petralibrarymanager to javafx.fxml;
     exports com.example.petralibrarymanager;
+    exports com.example.petralibrarymanager.database;
+    opens com.example.petralibrarymanager.database to javafx.fxml;
 }
