@@ -1,0 +1,183 @@
+/* Container styling */
+.content-root {
+    -fx-padding: 0;
+    -fx-hgap: 10;
+    -fx-vgap: 20;
+    -fx-alignment: TOP_CENTER;
+}
+
+.card-row {
+
+    /* -fx-background-color: rgba(255, 255, 255, 0.2); */
+    /*-fx-background-radius: 20;
+    -fx-border-radius: 20; */
+    -fx-padding: 10;
+    -fx-spacing: 20;
+    -fx-alignment: CENTER_LEFT;
+    /*-fx-border-color: rgba(255, 255, 255, 0.4);*/
+    /* -fx-border-width: 0; */
+    /* -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 12, 0.3, 0, 4); */
+
+    /* Let it grow full width */
+    -fx-max-width: Infinity;
+}
+
+.section-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #444;
+    -fx-padding: 0 0 0 0; /* slight padding below title */
+}
+
+.section {
+    -fx-background-color: rgba(255, 255, 255, 0.15); /* Soft acrylic background */
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-padding: 0 0 0 10;
+    -fx-spacing: 0;
+    -fx-border-color: rgba(255, 255, 255, 0.3);
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.12), 12, 0.25, 0, 5);
+}
+
+
+/* Base Card Style */
+.card {
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-padding: 20;
+    -fx-margin: 30;
+
+    -fx-pref-height: 130;
+    -fx-min-height: 130;
+    -fx-max-height: 160;
+
+    /* Acrylic Glass Look */
+    -fx-background-color: rgba(255, 255, 255, 0.25);
+    -fx-border-color: rgba(255, 255, 255, 0.5);
+    -fx-border-width: 1;
+
+    /* Soft Shadow */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 10, 0.3, 0, 4);
+
+}
+
+/* Hover Animation */
+.card:hover {
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 14, 0.4, 0, 6);
+    -fx-background-color: rgba(242, 139, 130, 0.3);
+}
+/* Label Styles */
+.card-label-title {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+}
+
+.card-label-value {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #222222;
+}
+
+/* Pastel Color Variants */
+/* Red */
+.card-red {
+    -fx-background-color: rgba(242, 139, 130, 0.25);
+}
+
+/* Green */
+.card-green {
+    -fx-background-color: rgba(129, 201, 149, 0.25);
+}
+
+/* Blue */
+.card-blue {
+    -fx-background-color: rgba(174, 203, 250, 0.25);
+}
+
+/* Yellow */
+.card-yellow {
+    -fx-background-color: rgba(255, 244, 117, 0.25);
+}
+
+/* Grey */
+.card-grey {
+    -fx-background-color: rgba(224, 224, 224, 0.25);
+}
+
+/* White */
+.card-white {
+    -fx-background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Purple */
+.card-purple {
+    -fx-background-color: rgba(204, 153, 255, 0.25);
+}
+
+/* Cyan */
+.card-cyan {
+    -fx-background-color: rgba(128, 222, 234, 0.25);
+}
+
+/* Orange */
+.card-orange {
+    -fx-background-color: rgba(255, 183, 77, 0.25);
+}
+
+/* Pink */
+.card-pink {
+    -fx-background-color: rgba(244, 143, 177, 0.25);
+}
+
+/* Teal */
+.card-teal {
+    -fx-background-color: rgba(77, 182, 172, 0.25);
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: rgba(255, 255, 255, 0.3);
+    -fx-border-width: 1;
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-padding: 0;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.06), 10, 0.2, 0, 2);
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+
+/* Make vertical scrollbar tight to the edge */
+.scroll-pane .scroll-bar:vertical {
+    -fx-padding: 0;
+    -fx-background-insets: 0;
+    -fx-pref-width: 10; /* or desired width */
+}
+
+/* Scrollbar thumb (draggable part) */
+.scroll-pane .scroll-bar:vertical .thumb {
+    -fx-background-color: rgba(0, 0, 0, 0.2);
+    -fx-background-radius: 5;
+}
+
+/* Scrollbar track */
+.scroll-pane .scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+}
+
+/* Hide increment/decrement arrow buttons if not needed */
+.scroll-pane .increment-button,
+.scroll-pane .decrement-button {
+    -fx-padding: 0;
+    -fx-opacity: 0;
+    -fx-background-color: transparent;
+}
+
+
+

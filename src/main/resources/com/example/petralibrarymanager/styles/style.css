@@ -1,293 +1,197 @@
-/* style.css */
+.root-pane {
+    -fx-background-color: linear-gradient(
+        from 0% 0% to 100% 100%,
+       	rgba(204, 255, 229, 0.4),
+        rgba(225, 245, 254, 0.55),    /* pastel blue */
+       	rgba(255, 229, 204, 0.45),
+        	rgba(234, 209, 255, 0.45)
+    );
 
-.root {
-    -fx-font-family: 'Segoe UI', sans-serif;
-    -fx-text-fill: white;
-}
-
-.whatsapp-root {
-    /* WhatsApp dark chat background */
-    -fx-background-color: #202020;
-    -fx-text-fill:    #202020;
-}
-
-/* Background overlay if needed */
-StackPane {
-    -fx-background-color: transparent;
-}
-
-.glass-vbox {
-    -fx-background-color: rgba(255, 255, 255, 0.15); /* white with 15% opacity */
-    -fx-background-radius: 10;
-    -fx-padding: 20;
-}
-
-.glass-anchor {
-    -fx-background-color: rgba(100, 100, 100, 0.15); /* white with 15% opacity */
-    -fx-background-radius: 10;
-    -fx-padding: 20;
-}
-.acrylic-vbox {
-    -fx-background-color: rgba(255, 255, 255, 0.4); /* White with 20% opacity
-    /* -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, rgba(0,0,0,0.4), rgba(0,0,0,0.2)); */
-    -fx-background-radius: 12;
-    -fx-border-radius: 12;
-    -fx-padding: 20;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
     -fx-border-color: rgba(255, 255, 255, 0.3);
-    -fx-border-width: 1;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 20, 0.5, 0, 0);
+    -fx-border-width: 0;
+
+    -fx-padding: 0;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 16, 0.2, 0, 4);
 }
 
-.bluish-acrylic-vbox {
-    -fx-background-color: rgba(30, 30, 30, 0.3); /* Darker tone */
+.root-dashboard-pane {
+    -fx-background-color: linear-gradient(
+        from 0% 0% to 100% 100%,
+       	rgba(204, 255, 229, 0.4),
+        rgba(225, 245, 254, 0.55),    /* pastel blue */
+       	rgba(255, 229, 204, 0.45),
+        	rgba(234, 209, 255, 0.45)
+    );
+
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-border-color: rgba(255, 255, 255, 0.3);
+    -fx-border-width: 1.5;
+
+    -fx-padding: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 16, 0.2, 0, 4);
+}
+
+
+/* Main dashboard container */
+.dashboard-container-upper {
+    -fx-background-color: linear-gradient(to bottom right, rgba(150, 150, 150, 0.35), rgba(236, 255, 245, 0.2));
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-border-color: rgba(255, 255, 255, 0.3);
+    -fx-border-width: 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0.3, 0, 4);
+    -fx-padding: 0;
+}
+
+/* Sidebar (VBox) with glass style */
+.glass-vbox {
+    -fx-background-color: rgba(255, 255, 255, 0.18);
+    -fx-background-radius: 16;
+    -fx-border-radius: 0;
+    -fx-border-color: rgba(255, 255, 255, 0.35);
+    -fx-border-width: 1;
+    -fx-padding: 18;
+    -fx-spacing: 10;
+
+    /* Enhanced soft shadow */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 14, 0.3, 0, 4);
+}
+
+.acrylic-blue-glass {
+    -fx-background-color: linear-gradient(
+        from 0% 0% to 100% 100%,
+        rgba(174, 203, 250, 0.35),
+        rgba(199, 220, 255, 0.25)
+    );
     -fx-background-radius: 16;
     -fx-border-radius: 16;
-    -fx-padding: 20;
-    -fx-border-color: rgba(255, 255, 255, 0.1);
+    -fx-border-color: rgba(255, 255, 255, 0.35);
     -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.12), 12, 0.3, 0, 3);
+}
+
+.acrylic-purple-glass {
+    -fx-background-color: linear-gradient(
+        from 0% 0% to 100% 100%,
+        rgba(234, 209, 255, 0.35),
+        rgba(220, 180, 255, 0.25)
+    );
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-color: rgba(255, 255, 255, 0.35);
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 12, 0.3, 0, 4);
+}
+
+.acrylic-green-glass {
+    -fx-background-color: linear-gradient(
+        from 0% 0% to 100% 100%,
+        rgba(204, 255, 229, 0.35),
+        rgba(178, 235, 211, 0.25)
+    );
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-color: rgba(255, 255, 255, 0.35);
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0.25, 0, 3);
 }
 
 
-.heading-light {
-    -fx-font-size: 48px;
-    -fx-font-weight: 300;
-    -fx-text-fill: rgba(255, 255, 255, 0.8);
-}
 
-.heading-bold {
-    -fx-font-size: 48px;
-    -fx-font-weight: bold;
-    -fx-text-fill: white;
-}
-
-.subheading {
-    -fx-font-size: 16px;
-    -fx-text-fill: #CCCCCC;
-    -fx-padding: 10 0 20 0;
-}
-
-/* Main login VBox container */
-.login-container {
-    -fx-background-color: rgba(255, 255, 255, 0.6);
-    -fx-background-radius: 20;
-    -fx-border-radius: 20;
-    -fx-border-color: rgba(255, 255, 255, 0.3);
-    -fx-border-width: 1.5;
-    -fx-padding: 40;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 20, 0.2, 0, 6);
-    -fx-spacing: 20;
-}
-
-/* Header text
-.title-label {
-    -fx-font-family: "Georgia", "Serif";
-    -fx-font-size: 22px;
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-} */
-
-/* Input fields */
-.text-field, .password-field {
-    -fx-background-color: rgba(255, 255, 255, 0.15);
-    -fx-text-fill: white;
-    -fx-prompt-text-fill: rgba(255, 255, 255, 0.5);
-    -fx-background-radius: 6;
-    -fx-border-radius: 6;
+/* Main content area */
+.glass-anchor {
+    -fx-background-color: rgba(0, 255, 255, 0.2);
+    -fx-background-radius: 0 0 0 0;  /* Only left corners rounded */
+    -fx-border-radius: 0 0 0 0;
     -fx-border-color: rgba(255, 255, 255, 0.3);
     -fx-border-width: 1;
-    -fx-padding: 8 12;
-    -fx-font-size: 13px;
-}
-
-/* Login Button */
-.login-button {
-    -fx-background-color: linear-gradient(to right, #5C6BC0, #3949AB);
-    -fx-background-radius: 6;
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-font-size: 13px;
-    -fx-padding: 8 16;
-    -fx-cursor: hand;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0.3, 0, 2);
-}
-.login-button:hover {
-    -fx-background-color: linear-gradient(to right, #7986CB, #5C6BC0);
-}
-
-/* Error message */
-.error-label {
-    -fx-text-fill: #e57373;
-    -fx-font-style: italic;
-    -fx-font-size: 12px;
+    -fx-padding: 20 20 0 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0.2, 0, 4);
 }
 
 
-.action-button {
-    -fx-background-color: transparent;
-    -fx-border-color: rgba(255, 255, 255, 0.7);
-    -fx-text-fill: white;
-    -fx-border-radius: 5;
-    -fx-background-radius: 5;
-    -fx-padding: 10 20;
+/* Dashboard button */
+.dashboard-button {
+    -fx-background-color: linear-gradient(
+        from 0% 0% to 100% 100%,
+        rgba(178, 235, 211, 0.95),   /* pastel mint */
+        rgba(128, 222, 234, 0.85)    /* pastel aqua */
+    );
+    -fx-text-fill: #2e3c3b;
     -fx-font-size: 14px;
     -fx-font-weight: bold;
-    -fx-cursor: hand;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 4, 0.2, 0, 2);
-    -fx-transition: all 0.25s ease-in-out; /* Note: JavaFX does not support this in CSS */
-}
 
-.action-button:hover {
-    -fx-background-color: rgba(255, 255, 255, 0.85); /* soft white */
-    -fx-text-fill: #1a1a1a; /* soft black */
-    -fx-border-color: transparent;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 6, 0.3, 0, 3);
-}
-
-
-/* Form field labels (Username, Password) */
-.form-label {
-    -fx-text-fill: white; /* Brighter and more visible */
-    -fx-font-size: 13px;
-    -fx-font-weight: bold;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 2, 0.5, 0, 1); /* Subtle shadow to improve readability */
-    -fx-label-padding: 0 0 4 0;
-}
-
-.title-label {
-    -fx-text-fill: white;
-    -fx-font-family: "Georgia", "Serif";
-    -fx-font-size: 22px;
-    -fx-font-weight: bold;
-    /*-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 4, 0.5, 0, 2); */
-    -fx-padding: 10 0 20 0;
-    -fx-alignment: center;
-}
-
-.custom-textfield {
-    -fx-background-color: rgba(255, 255, 255, 0.12); /* translucent white */
-    -fx-text-fill: white; /* visible text */
-    -fx-prompt-text-fill: rgba(255, 255, 255, 0.4); /* faded placeholder */
-    -fx-border-color: rgba(255, 255, 255, 0.6); /* brighter border */
-    -fx-border-radius: 6;
-    -fx-background-radius: 6;
-    -fx-padding: 6 10;
-    -fx-font-size: 14px;
-}
-
-.login-container2 {
-    -fx-background-color: rgba(255, 255, 255, 0.2); /* subtle acrylic */
-    -fx-background-radius: 15;
-    -fx-border-color: rgba(255, 255, 255, 0.6); /* brighter contrasting border */
-    -fx-border-width: 2;
-    -fx-border-radius: 15;
-    -fx-padding: 30;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 16, 0.2, 0, 6);
-}
-
-.nav-button {
-    -fx-text-fill: white;
-    -fx-background-color: transparent;
-    -fx-font-size: 13px;
-    -fx-padding: 6 14;
-    -fx-border-width: 0 0 2 0;
-    -fx-border-color: transparent;
-}
-
-.nav-button:hover {
-    -fx-border-color: white;
-}
-
-.dashboard-container {
-    -fx-background-color: rgba(255, 255, 255, 0.2); /* soft white transparency */
     -fx-background-radius: 12;
     -fx-border-radius: 12;
-    -fx-border-color: white;
-    -fx-border-width: 1.5;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 4);
-}
+    -fx-border-color: rgba(255, 255, 255, 0.4);
+    -fx-border-width: 1.2;
 
-.dashboard-container-upper {
-  -fx-background-color: linear-gradient(to bottom right, rgba(46, 204, 113, 0.3), rgba(39, 174, 96, 0.2));
-    /* -fx-background-radius: 12; */
-    /* -fx-border-radius: 12; */
-    -fx-border-color: white;
-    -fx-border-width: 1.5;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 4);
-}
-/*
-.dashboard-button {
-    -fx-background-color: rgba(255, 255, 255, 0.8);
-    -fx-text-fill: #2c3e50;
-    -fx-font-size: 14px;
-    -fx-font-weight: bold;
-    -fx-padding: 5 5; /* remove horizontal padding */
-    -fx-margin: 5 5;
-    -fx-background-radius: 10;
-    -fx-border-radius: 10;
-    -fx-border-color: rgba(0, 0, 0, 0.1);
-    -fx-border-width: 1px;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4, 0.2, 1, 1);
-    -fx-max-width: Infinity;  /* expand fully */
-    -fx-alignment: center;
-}
-
-/* Hover effect */
-.dashboard-button:hover {
-    -fx-background-color: linear-gradient(to right, #3498db, #6dd5fa);
-    -fx-text-fill: white;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 6, 0.3, 1, 1);
-    -fx-scale-x: 1.03;
-    -fx-scale-y: 1.03;
-}
-
-/* Optional: Focus effect */
-.dashboard-button:focused {
-    -fx-border-color: #2980b9;
-    -fx-border-width: 2px;
-}
-*/
-
-.dashboard-button {
-    -fx-background-color:
-        linear-gradient(to bottom right, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.15));
-    -fx-background-radius: 12;
-    -fx-border-radius: 12;
-    -fx-border-color: rgba(255, 255, 255, 0.3);
-    -fx-border-width: 1px;
-    -fx-text-fill: white;
-    -fx-font-size: 14px;
-    -fx-font-weight: bold;
-    -fx-padding: 12 0;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 6, 0.1, 0, 2);
-    -fx-pref-width: 9999px;  /* simulate full width */
-    -fx-max-width: Infinity; /* allow to stretch */
-    -fx-alignment: center-left;
+    -fx-padding: 10 24;
     -fx-cursor: hand;
+
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.12), 6, 0.4, 0, 2);
 }
 
 
-/* Hover with subtle brightening and more opaque glass */
+
 .dashboard-button:hover {
-    -fx-background-color:
-        linear-gradient(to bottom right, rgba(100, 100, 100, 0.15), rgba(255, 255, 255, 0.25));
-    -fx-scale-x: 1.03;
-    -fx-scale-y: 1.03;
-    -fx-text-fill: #f0f0f0;
+    -fx-background-color: linear-gradient(
+        from 0% 0% to 100% 100%,
+        rgba(128, 222, 234, 0.95),
+        rgba(77, 182, 172, 0.85)
+    );
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 8, 0.5, 0, 3);
 }
 
-/* Optional: Add subtle glowing border when focused */
-.dashboard-button:focused {
-    -fx-border-color: #91d5ff;
-    -fx-border-width: 2px;
+.dashboard-button:pressed {
+    -fx-background-color: linear-gradient(
+        from 0% 0% to 100% 100%,
+        rgba(77, 182, 172, 0.9),
+        rgba(38, 166, 154, 0.8)
+    );
+    -fx-translate-y: 1;
 }
+
+
+/* Acrylic button color variants */
+.acrylic-red {
+    -fx-background-color: rgba(242, 139, 130, 0.25);
+}
+
 .acrylic-blue {
-    -fx-background-color: linear-gradient(to bottom right, rgba(52, 152, 219, 0.3), rgba(41, 128, 185, 0.2));
+    -fx-background-color: rgba(174, 203, 250, 0.25);
 }
 
 .acrylic-green {
-    -fx-background-color: linear-gradient(to bottom right, rgba(46, 204, 113, 0.3), rgba(39, 174, 96, 0.2));
+    -fx-background-color: rgba(129, 201, 149, 0.25);
 }
 
-.acrylic-red {
-    -fx-background-color: linear-gradient(to bottom right, rgba(231, 76, 60, 0.3), rgba(192, 57, 43, 0.2));
+.custom-textfield {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+    -fx-background-insets: 0;
+    -fx-background-radius: 10;
+    -fx-border-color: rgba(255, 255, 255, 0.35);
+    -fx-border-radius: 10;
+    -fx-border-width: 1.2;
+    -fx-padding: 6 12 6 12;
+    -fx-text-fill: #333333;
+    -fx-font-size: 13px;
+    -fx-font-weight: normal;
+    -fx-prompt-text-fill: rgba(100, 100, 100, 0.5);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 4, 0.3, 0, 2);
 }
+
+/* On focus/hover effect */
+.custom-textfield:focused {
+    -fx-border-color: rgba(100, 149, 237, 0.6); /* Cornflower blue glow */
+    -fx-effect: dropshadow(gaussian, rgba(100,149,237, 0.3), 6, 0.4, 0, 2);
+}
+
+.custom-textfield:hover {
+    -fx-border-color: rgba(100, 149, 237, 0.45);
+}
+
+

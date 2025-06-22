@@ -44,8 +44,8 @@ public class PetraLibraryManager extends Application {
         Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
 
 // Calculate percentage-based width and height
-        width = screenBounds.getWidth() * 0.5;   // 80% of screen width
-        height = screenBounds.getHeight() * 0.6; // 80% of screen height
+        width = screenBounds.getWidth() * 0.7;   // 80% of screen width
+        height = screenBounds.getHeight() * 0.8; // 80% of screen height
 
 // Set stage size
         stage.setWidth(width);

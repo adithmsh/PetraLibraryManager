@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="rootPane" styleClass="dashboard-container-upper" stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.petralibrarymanager.LoginController">
+<StackPane fx:id="rootPane" prefHeight="589.0" prefWidth="894.0" styleClass="root-pane" stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.petralibrarymanager.LoginController">
    <children>
       <VBox fx:id="loginVBox" alignment="CENTER">
          <padding>
@@ -43,18 +43,22 @@
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </Label>
-            <Button fx:id="loginButton" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onLoginClicked" styleClass="action-button" text="LOGIN">
+            <Button fx:id="loginButton" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onLoginClicked" text="LOGIN">
                <VBox.margin>
                   <Insets top="30.0" />
                </VBox.margin>
+               <styleClass>
+                  <String fx:value="dashboard-button" />
+                  <String fx:value="acrylic-green-glass" />
+               </styleClass>
             </Button>
          </children>
          <StackPane.margin>
             <Insets bottom="100.0" left="200.0" right="200.0" top="100.0" />
          </StackPane.margin>
          <styleClass>
-            <String fx:value="acrylic-vbox" />
-            <String fx:value="acrylic-green" />
+            <String fx:value="glass-vbox" />
+            <String fx:value="acrylic-purple-glass" />
          </styleClass>
       </VBox>
    </children>

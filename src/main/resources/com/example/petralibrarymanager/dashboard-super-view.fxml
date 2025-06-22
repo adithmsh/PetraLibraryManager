@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="634.0" prefWidth="945.0" stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.petralibrarymanager.DashboardSuperController">
+<StackPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="759.0" prefWidth="1003.0" styleClass="root-pane" stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.petralibrarymanager.DashboardSuperController">
    <children>
       <VBox fx:id="sidebar1" alignment="CENTER" prefHeight="520.0" prefWidth="716.0" styleClass="dashboard-container-upper" StackPane.alignment="CENTER">
          <children>
@@ -19,9 +19,9 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <HBox prefHeight="635.0" prefWidth="903.0" styleClass="acrylic-vbox">
+            <HBox prefHeight="735.0" prefWidth="999.0" styleClass="acrylic-vbox">
                <children>
-                  <VBox fx:id="sidebar" prefHeight="558.0" prefWidth="227.0" styleClass="glass-vbox">
+                  <VBox fx:id="sidebar" prefHeight="558.0" prefWidth="227.0" styleClass="root-dashboard-pane">
                      <children>
                         <Button fx:id="homeButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onHomeClicked" text="Home">
                            <styleClass>
@@ -66,24 +66,24 @@
                            </VBox.margin>
                         </Button>
                         <Button fx:id="settingsButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSettingClicked" text="Settings">
-                           <styleClass>
-                              <String fx:value="dashboard-button" />
-                              <String fx:value="acrylic-blue" />
-                           </styleClass>
                            <VBox.margin>
                               <Insets bottom="6.0" />
-                           </VBox.margin></Button>
+                           </VBox.margin>
+                           <styleClass>
+                              <String fx:value="dashboard-button" />
+                              <String fx:value="acrylic-green" />
+                           </styleClass></Button>
                         <Button fx:id="logoutButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onLogoutClicked" text="Logout">
-                           <styleClass>
-                              <String fx:value="dashboard-button" />
-                              <String fx:value="acrylic-red" />
-                           </styleClass>
                            <VBox.margin>
                               <Insets bottom="6.0" />
-                           </VBox.margin></Button>
+                           </VBox.margin>
+                           <styleClass>
+                              <String fx:value="dashboard-button" />
+                              <String fx:value="acrylic-green" />
+                           </styleClass></Button>
                      </children>
                   </VBox>
-                  <AnchorPane fx:id="mainContent" prefHeight="529.0" prefWidth="711.0" styleClass="glass-anchor" />
+                  <AnchorPane fx:id="mainContent" prefHeight="683.0" prefWidth="774.0" styleClass="glass-anchor" />
                </children>
             </HBox>
          </children>
