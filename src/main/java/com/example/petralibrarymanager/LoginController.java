@@ -15,6 +15,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import javafx.animation.Timeline;
@@ -32,18 +33,19 @@ public class LoginController {
     @FXML private Button loginButton;
     @FXML private TextField identifierField;
     @FXML private PasswordField passwordField;
+    @FXML private Label headingLabel;
     @FXML private Label messageLabel;
     @FXML private VBox loginVBox;
 //    @FXML private ImageView bgImage2;
     @FXML private ImageView bgImage1;
     @FXML private StackPane rootPane;
 
-    private List<Image> backgrounds = List.of(
-            new Image(getClass().getResource("images/bgs/5.jpg").toExternalForm()),
-            new Image(getClass().getResource("images/bgs/2.jpg").toExternalForm()),
-            new Image(getClass().getResource("images/bgs/3.jpg").toExternalForm()),
-            new Image(getClass().getResource("images/bgs/4.jpg").toExternalForm())
-    );
+//    private List<Image> backgrounds = List.of(
+//            new Image(getClass().getResource("images/bgs/5.jpg").toExternalForm()),
+//            new Image(getClass().getResource("images/bgs/2.jpg").toExternalForm()),
+//            new Image(getClass().getResource("images/bgs/3.jpg").toExternalForm()),
+//            new Image(getClass().getResource("images/bgs/4.jpg").toExternalForm())
+//    );
 
 //    private int index = 0;
 
@@ -62,10 +64,14 @@ public class LoginController {
 //        startImageRotation();
 
 //        bgImage2.fitWidthProperty().bind(rootPane.widthProperty());
-//        bgImage2.fitHeightProperty().bind(rootPane.heightProperty());
+//        bgImage2.fitHeightProperty().bind(rootPane.heightProperty())
+//
+//        Font.loadFont(getClass().getResource("fonts/Poppins/Poppins-Black.ttf").toExternalForm(), 12);;
+//        headingLabel.setFont(Font.font("Poppins-Black", 18));
         bgImage1.fitWidthProperty().bind(rootPane.widthProperty());
         bgImage1.fitHeightProperty().bind(rootPane.heightProperty());
 //        BackgroundFader.setupCrossfadeBackground(rootPane, backgrounds, 5);
+
         messageLabel.setVisible(false);
     }
 

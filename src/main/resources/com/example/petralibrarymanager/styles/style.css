@@ -57,7 +57,7 @@ StackPane {
 
 /* Main login VBox container */
 .login-container {
-    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-background-color: rgba(255, 255, 255, 0.6);
     -fx-background-radius: 20;
     -fx-border-radius: 20;
     -fx-border-color: rgba(255, 255, 255, 0.3);
@@ -164,7 +164,7 @@ StackPane {
 }
 
 .login-container2 {
-    -fx-background-color: rgba(255, 255, 255, 0.08); /* subtle acrylic */
+    -fx-background-color: rgba(255, 255, 255, 0.2); /* subtle acrylic */
     -fx-background-radius: 15;
     -fx-border-color: rgba(255, 255, 255, 0.6); /* brighter contrasting border */
     -fx-border-width: 2;
