@@ -1,47 +1,53 @@
 package com.example.petralibrarymanager;
 
-import com.example.petralibrarymanager.graphical.BackgroundFader;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.List;
 
 public class DashboardSuperController {
         @FXML
         private VBox sidebar;
 
+        @FXML private Button homeButton;
+        @FXML private Button catalogButton;
+        @FXML private Button circulationsButton;
+        @FXML private Button reservationsButton;
+        @FXML private Button finesButton;
+        @FXML private Button settingsButton;
         @FXML private Button logoutButton;
         @FXML private StackPane rootPane;
 
         @FXML
         private AnchorPane mainContent;
 
-        private List<Image> backgrounds = List.of(
-                new Image(getClass().getResource("images/bgs/5.jpg").toExternalForm()),
-                new Image(getClass().getResource("images/bgs/2.jpg").toExternalForm()),
-                new Image(getClass().getResource("images/bgs/3.jpg").toExternalForm()),
-                new Image(getClass().getResource("images/bgs/4.jpg").toExternalForm())
-        );
-
         @FXML
         public void initialize() {
             // Called automatically after FXML is loaded
-            System.out.println("Dashboard initialized!");
-//            bgImage1.setVisible(false);
-//            BackgroundFader.setupCrossfadeBackground(rootPane, backgrounds, 5);
+            try {
+                // Load new FXML
+                Node newView = FXMLLoader.load(getClass().getResource("home-super-subview.fxml"));
 
-            // Example: hide sidebar on startup
-            // sidebar.setVisible(false);
-            // sidebar.setManaged(false);
+                // Replace content
+                mainContent.getChildren().setAll(newView);
+
+                // Optional: anchor the new content
+                AnchorPane.setTopAnchor(newView, 0.0);
+                AnchorPane.setRightAnchor(newView, 0.0);
+                AnchorPane.setBottomAnchor(newView, 0.0);
+                AnchorPane.setLeftAnchor(newView, 0.0);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            System.out.println("Dashboard initialized!");
         }
 
         // Example method to toggle sidebar visibility
@@ -51,10 +57,6 @@ public class DashboardSuperController {
             sidebar.setManaged(!currentlyVisible);
         }
 
-        // You can also load new content into mainContent
-        // public void loadPage(Node node) {
-        //     mainContent.getChildren().setAll(node);
-        // }
 
     @FXML protected void onLogoutClicked() {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("login-view.fxml"));
@@ -73,5 +75,115 @@ public class DashboardSuperController {
             throw new RuntimeException(e);
         }
     }
+
+    @FXML protected void onSettingClicked() {
+        System.out.println("Setting  button is clicked.");
+        try {
+            // Load new FXML
+            Node newView = FXMLLoader.load(getClass().getResource("settings-super-subview.fxml"));
+
+            // Replace content
+            mainContent.getChildren().setAll(newView);
+
+            // Optional: anchor the new content
+            AnchorPane.setTopAnchor(newView, 0.0);
+            AnchorPane.setRightAnchor(newView, 0.0);
+            AnchorPane.setBottomAnchor(newView, 0.0);
+            AnchorPane.setLeftAnchor(newView, 0.0);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML protected void onHomeClicked() {
+        try {
+            // Load new FXML
+            Node newView = FXMLLoader.load(getClass().getResource("home-super-subview.fxml"));
+
+            // Replace content
+            mainContent.getChildren().setAll(newView);
+
+            // Optional: anchor the new content
+            AnchorPane.setTopAnchor(newView, 0.0);
+            AnchorPane.setRightAnchor(newView, 0.0);
+            AnchorPane.setBottomAnchor(newView, 0.0);
+            AnchorPane.setLeftAnchor(newView, 0.0);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML protected void onCatalogClicked() {
+        try {
+            // Load new FXML
+            Node newView = FXMLLoader.load(getClass().getResource("catalog-super-subview.fxml"));
+
+            // Replace content
+            mainContent.getChildren().setAll(newView);
+
+            // Optional: anchor the new content
+            AnchorPane.setTopAnchor(newView, 0.0);
+            AnchorPane.setRightAnchor(newView, 0.0);
+            AnchorPane.setBottomAnchor(newView, 0.0);
+            AnchorPane.setLeftAnchor(newView, 0.0);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML protected void onReservationsClicked() {
+        try {
+            // Load new FXML
+            Node newView = FXMLLoader.load(getClass().getResource("reservations-super-subview.fxml"));
+
+            // Replace content
+            mainContent.getChildren().setAll(newView);
+
+            // Optional: anchor the new content
+            AnchorPane.setTopAnchor(newView, 0.0);
+            AnchorPane.setRightAnchor(newView, 0.0);
+            AnchorPane.setBottomAnchor(newView, 0.0);
+            AnchorPane.setLeftAnchor(newView, 0.0);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML protected void onFinesClicked() {
+        try {
+            // Load new FXML
+            Node newView = FXMLLoader.load(getClass().getResource("fines-super-subview.fxml"));
+
+            // Replace content
+            mainContent.getChildren().setAll(newView);
+
+            // Optional: anchor the new content
+            AnchorPane.setTopAnchor(newView, 0.0);
+            AnchorPane.setRightAnchor(newView, 0.0);
+            AnchorPane.setBottomAnchor(newView, 0.0);
+            AnchorPane.setLeftAnchor(newView, 0.0);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML protected void onCirculationsClicked() {
+        try {
+            // Load new FXML
+            Node newView = FXMLLoader.load(getClass().getResource("circulations-super-subview.fxml"));
+
+            // Replace content
+            mainContent.getChildren().setAll(newView);
+
+            // Optional: anchor the new content
+            AnchorPane.setTopAnchor(newView, 0.0);
+            AnchorPane.setRightAnchor(newView, 0.0);
+            AnchorPane.setBottomAnchor(newView, 0.0);
+            AnchorPane.setLeftAnchor(newView, 0.0);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

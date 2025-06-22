@@ -15,18 +15,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
-
-import javafx.animation.Timeline;
-import javafx.animation.KeyFrame;
-import javafx.util.Duration;
 
 import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
 
 public class LoginController {
 
@@ -36,54 +30,13 @@ public class LoginController {
     @FXML private Label headingLabel;
     @FXML private Label messageLabel;
     @FXML private VBox loginVBox;
-//    @FXML private ImageView bgImage2;
-    @FXML private ImageView bgImage1;
     @FXML private StackPane rootPane;
-
-    private List<Image> backgrounds = List.of(
-            new Image(getClass().getResource("images/bgs/5.jpg").toExternalForm()),
-            new Image(getClass().getResource("images/bgs/2.jpg").toExternalForm()),
-            new Image(getClass().getResource("images/bgs/3.jpg").toExternalForm()),
-            new Image(getClass().getResource("images/bgs/4.jpg").toExternalForm())
-    );
-
-//    private int index = 0;
 
     @FXML
     public void initialize() {
-        // Apply blur
-//        BoxBlur blur = new BoxBlur();
-//        blur.setWidth(5);
-//        blur.setHeight(5);
-//        blur.setIterations(3);
-//
-//        loginVBox.setEffect(blur);
-
-
-//        bgImage2.setImage(backgrounds.get(index));
-//        startImageRotation();
-
-//        bgImage2.fitWidthProperty().bind(rootPane.widthProperty());
-//        bgImage2.fitHeightProperty().bind(rootPane.heightProperty())
-//
-//        Font.loadFont(getClass().getResource("fonts/Poppins/Poppins-Black.ttf").toExternalForm(), 12);;
-//        headingLabel.setFont(Font.font("Poppins-Black", 18));
-//        bgImage1.fitWidthProperty().bind(rootPane.widthProperty());
-//        bgImage1.fitHeightProperty().bind(rootPane.heightProperty());
-//        bgImage1.setVisible(false);
-//        BackgroundFader.setupCrossfadeBackground(rootPane, backgrounds, 5);
-
         messageLabel.setVisible(false);
     }
 
-//    private void startImageRotation() {
-//        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(8), e -> {
-//            index = (index + 1) % backgrounds.size();
-//            bgImage2.setImage(backgrounds.get(index));
-//        }));
-//        timeline.setCycleCount(Animation.INDEFINITE);
-//        timeline.play();
-//    }
 
     @FXML
     protected void onLoginClicked() {
@@ -136,7 +89,6 @@ public class LoginController {
                         // Set the new scene
                         Scene dashboardScene = new Scene(dashboardRoot);
                         stage.setScene(dashboardScene);
-//                        stage.setTitle("Petra LibraryDashboard");
 
                     } catch (IOException e) {
                         throw new RuntimeException(e);
