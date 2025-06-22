@@ -40,12 +40,12 @@ public class LoginController {
     @FXML private ImageView bgImage1;
     @FXML private StackPane rootPane;
 
-//    private List<Image> backgrounds = List.of(
-//            new Image(getClass().getResource("images/bgs/5.jpg").toExternalForm()),
-//            new Image(getClass().getResource("images/bgs/2.jpg").toExternalForm()),
-//            new Image(getClass().getResource("images/bgs/3.jpg").toExternalForm()),
-//            new Image(getClass().getResource("images/bgs/4.jpg").toExternalForm())
-//    );
+    private List<Image> backgrounds = List.of(
+            new Image(getClass().getResource("images/bgs/5.jpg").toExternalForm()),
+            new Image(getClass().getResource("images/bgs/2.jpg").toExternalForm()),
+            new Image(getClass().getResource("images/bgs/3.jpg").toExternalForm()),
+            new Image(getClass().getResource("images/bgs/4.jpg").toExternalForm())
+    );
 
 //    private int index = 0;
 
@@ -68,8 +68,9 @@ public class LoginController {
 //
 //        Font.loadFont(getClass().getResource("fonts/Poppins/Poppins-Black.ttf").toExternalForm(), 12);;
 //        headingLabel.setFont(Font.font("Poppins-Black", 18));
-        bgImage1.fitWidthProperty().bind(rootPane.widthProperty());
-        bgImage1.fitHeightProperty().bind(rootPane.heightProperty());
+//        bgImage1.fitWidthProperty().bind(rootPane.widthProperty());
+//        bgImage1.fitHeightProperty().bind(rootPane.heightProperty());
+//        bgImage1.setVisible(false);
 //        BackgroundFader.setupCrossfadeBackground(rootPane, backgrounds, 5);
 
         messageLabel.setVisible(false);
@@ -116,8 +117,6 @@ public class LoginController {
                     DataBaseManager.password = password_hash;
                     DataBaseManager.role = rset.getString("role");
                     System.out.println("user is found! " + "privilege: " + DataBaseManager.role);
-
-
 
 
                     FXMLLoader loader = null;

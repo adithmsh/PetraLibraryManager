@@ -1,29 +1,43 @@
 package com.example.petralibrarymanager;
 
+import com.example.petralibrarymanager.graphical.BackgroundFader;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.List;
 
 public class DashboardSuperController {
         @FXML
         private VBox sidebar;
 
         @FXML private Button logoutButton;
+        @FXML private StackPane rootPane;
 
         @FXML
         private AnchorPane mainContent;
+
+        private List<Image> backgrounds = List.of(
+                new Image(getClass().getResource("images/bgs/5.jpg").toExternalForm()),
+                new Image(getClass().getResource("images/bgs/2.jpg").toExternalForm()),
+                new Image(getClass().getResource("images/bgs/3.jpg").toExternalForm()),
+                new Image(getClass().getResource("images/bgs/4.jpg").toExternalForm())
+        );
 
         @FXML
         public void initialize() {
             // Called automatically after FXML is loaded
             System.out.println("Dashboard initialized!");
+//            bgImage1.setVisible(false);
+//            BackgroundFader.setupCrossfadeBackground(rootPane, backgrounds, 5);
 
             // Example: hide sidebar on startup
             // sidebar.setVisible(false);

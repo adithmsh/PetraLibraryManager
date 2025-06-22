@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -8,27 +10,80 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.petralibrarymanager.DashboardSuperController">
+<StackPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="634.0" prefWidth="945.0" stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.petralibrarymanager.DashboardSuperController">
    <children>
-      <VBox fx:id="sidebar1" alignment="CENTER" prefHeight="400.0" prefWidth="203.0" StackPane.alignment="CENTER">
+      <VBox fx:id="sidebar1" alignment="CENTER" prefHeight="520.0" prefWidth="716.0" styleClass="dashboard-container-upper" StackPane.alignment="CENTER">
          <children>
             <Label alignment="CENTER" contentDisplay="CENTER" text="DASHBOARD">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <HBox prefHeight="420.0" prefWidth="600.0">
+            <HBox prefHeight="635.0" prefWidth="903.0" styleClass="acrylic-vbox">
                <children>
-                  <VBox fx:id="sidebar" prefHeight="400.0" prefWidth="203.0">
+                  <VBox fx:id="sidebar" prefHeight="558.0" prefWidth="227.0" styleClass="glass-vbox">
                      <children>
-                        <Button mnemonicParsing="false" text="Home" />
-                        <Button mnemonicParsing="false" text="Catalog Management" />
-                        <Button mnemonicParsing="false" text="Settings" />
-                        <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#onLogoutClicked" text="Logout" />
-                        <Button layoutX="10.0" layoutY="35.0" mnemonicParsing="false" text="Circulation(Borrow/Return)" />
+                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Home">
+                           <styleClass>
+                              <String fx:value="dashboard-button" />
+                              <String fx:value="acrylic-red" />
+                           </styleClass>
+                           <VBox.margin>
+                              <Insets bottom="6.0" />
+                           </VBox.margin></Button>
+                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Catalog Management">
+                           <styleClass>
+                              <String fx:value="dashboard-button" />
+                              <String fx:value="acrylic-blue" />
+                           </styleClass>
+                           <VBox.margin>
+                              <Insets bottom="6.0" />
+                           </VBox.margin></Button>
+                        <Button layoutX="10.0" layoutY="35.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Circulation(Borrow/Return)">
+                           <styleClass>
+                              <String fx:value="dashboard-button" />
+                              <String fx:value="acrylic-blue" />
+                           </styleClass>
+                           <VBox.margin>
+                              <Insets bottom="6.0" />
+                           </VBox.margin></Button>
+                        <Button layoutX="30.0" layoutY="117.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Reservations">
+                           <styleClass>
+                              <String fx:value="dashboard-button" />
+                              <String fx:value="acrylic-blue" />
+                           </styleClass>
+                           <VBox.margin>
+                              <Insets bottom="6.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button layoutX="30.0" layoutY="88.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Fines">
+                           <styleClass>
+                              <String fx:value="dashboard-button" />
+                              <String fx:value="acrylic-blue" />
+                           </styleClass>
+                           <VBox.margin>
+                              <Insets bottom="315.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Settings">
+                           <styleClass>
+                              <String fx:value="dashboard-button" />
+                              <String fx:value="acrylic-blue" />
+                           </styleClass>
+                           <VBox.margin>
+                              <Insets bottom="6.0" />
+                           </VBox.margin></Button>
+                        <Button fx:id="logoutButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onLogoutClicked" text="Logout">
+                           <styleClass>
+                              <String fx:value="dashboard-button" />
+                              <String fx:value="acrylic-red" />
+                           </styleClass>
+                           <VBox.margin>
+                              <Insets bottom="6.0" />
+                           </VBox.margin></Button>
                      </children>
                   </VBox>
-                  <AnchorPane fx:id="mainContent" prefWidth="504.0" style="-fx-background-color: grey;" />
+                  <AnchorPane fx:id="mainContent" prefHeight="529.0" prefWidth="711.0" styleClass="glass-anchor" />
                </children>
             </HBox>
          </children>
