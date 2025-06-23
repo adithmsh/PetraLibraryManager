@@ -8,4 +8,8 @@ module com.example.petralibrarymanager {
     exports com.example.petralibrarymanager;
     exports com.example.petralibrarymanager.database;
     opens com.example.petralibrarymanager.database to javafx.fxml;
+
+    exports com.example.petralibrarymanager.contents to javafx.fxml;
+    opens com.example.petralibrarymanager.contents to javafx.fxml;
+
 }

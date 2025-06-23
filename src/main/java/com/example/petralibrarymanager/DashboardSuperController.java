@@ -1,5 +1,6 @@
 package com.example.petralibrarymanager;
 
+import com.example.petralibrarymanager.contents.CatalogController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -116,7 +117,9 @@ public class DashboardSuperController {
     @FXML protected void onCatalogClicked() {
         try {
             // Load new FXML
-            Node newView = FXMLLoader.load(getClass().getResource("catalog-super-subview.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("catalog-super-subview.fxml"));
+            loader.setController(new CatalogController());
+            Node newView = loader.load();
 
             // Replace content
             mainContent.getChildren().setAll(newView);

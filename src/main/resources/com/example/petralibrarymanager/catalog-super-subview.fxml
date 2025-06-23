@@ -6,14 +6,14 @@
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="826.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TableView prefHeight="472.0" prefWidth="679.0">
+      <TableView fx:id="catalogsTableView" prefHeight="472.0" prefWidth="679.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="ISBN" />
-          <TableColumn prefWidth="218.0" text="TITLE" />
-            <TableColumn prefWidth="136.0" text="PUBLISHER" />
-            <TableColumn prefWidth="164.0" text="PUBLICATION YEAR" />
-            <TableColumn prefWidth="117.0" text="TOTAL COPIES" />
-            <TableColumn prefWidth="115.0" text="AVAILABLE COPIES" />
+          <TableColumn fx:id="ISBNColumn" prefWidth="235.0" text="ISBN" />
+          <TableColumn fx:id="titleColumn" prefWidth="185.0" text="TITLE" />
+            <TableColumn fx:id="publisherNameColumn" prefWidth="232.0" text="PUBLISHER" />
+            <TableColumn fx:id="publicationYearColumn" prefWidth="49.0" text="YEAR" />
+            <TableColumn fx:id="totalCopiesColumn" prefWidth="51.0" text="TOTAL" />
+            <TableColumn fx:id="availableCopiesColumn" prefWidth="73.0" text="AVAILABLE" />
         </columns>
       </TableView>
    </children>

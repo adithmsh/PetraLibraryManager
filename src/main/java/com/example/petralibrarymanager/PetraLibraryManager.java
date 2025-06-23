@@ -2,6 +2,7 @@ package com.example.petralibrarymanager;
 
 import com.example.petralibrarymanager.database.DataBaseManager;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
@@ -62,6 +63,11 @@ public class PetraLibraryManager extends Application {
 
         stage.setScene(scene);
         stage.show();
+
+        Platform.runLater(() -> {
+            double preferredWidth = stage.getScene().getRoot().prefWidth(-1);
+            stage.setWidth(preferredWidth + 16); // add window decoration width
+        });
     }
 
     public static void main(String[] args) {
