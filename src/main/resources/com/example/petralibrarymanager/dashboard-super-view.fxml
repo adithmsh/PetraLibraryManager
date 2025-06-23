@@ -19,7 +19,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <HBox prefHeight="735.0" prefWidth="999.0">
+            <HBox prefHeight="735.0" prefWidth="999.0" styleClass="content-container">
                <children>
                   <VBox fx:id="sidebar" prefHeight="729.0" prefWidth="301.0" styleClass="root-dashboard-pane">
                      <children>
