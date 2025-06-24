@@ -1,12 +1,16 @@
 package com.example.petralibrarymanager;
 
 import com.example.petralibrarymanager.contents.CatalogController;
+import com.example.petralibrarymanager.contents.CirculationsController;
+import com.example.petralibrarymanager.contents.FinesController;
+import com.example.petralibrarymanager.contents.ReservationsController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -18,6 +22,8 @@ public class DashboardSuperController {
         @FXML
         private VBox sidebar;
 
+
+        @FXML private Label topLabel;
         @FXML private Button homeButton;
         @FXML private Button catalogButton;
         @FXML private Button circulationsButton;
@@ -112,6 +118,8 @@ public class DashboardSuperController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        topLabel.setText("Home");
     }
 
     @FXML protected void onCatalogClicked() {
@@ -132,12 +140,15 @@ public class DashboardSuperController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        topLabel.setText("Catalog Manager");
     }
 
     @FXML protected void onReservationsClicked() {
         try {
-            // Load new FXML
-            Node newView = FXMLLoader.load(getClass().getResource("reservations-super-subview.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("reservations-super-subview.fxml"));
+            loader.setController(new ReservationsController());
+            Node newView = loader.load();
 
             // Replace content
             mainContent.getChildren().setAll(newView);
@@ -150,12 +161,15 @@ public class DashboardSuperController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        topLabel.setText("Reservations Manager");
     }
 
     @FXML protected void onFinesClicked() {
         try {
-            // Load new FXML
-            Node newView = FXMLLoader.load(getClass().getResource("fines-super-subview.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("fines-super-subview.fxml"));
+            loader.setController(new FinesController());
+            Node newView = loader.load();
 
             // Replace content
             mainContent.getChildren().setAll(newView);
@@ -168,12 +182,14 @@ public class DashboardSuperController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        topLabel.setText("Fines Manager");
     }
 
     @FXML protected void onCirculationsClicked() {
         try {
-            // Load new FXML
-            Node newView = FXMLLoader.load(getClass().getResource("circulations-super-subview.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("circulations-super-subview.fxml"));
+            loader.setController(new CirculationsController());
+            Node newView = loader.load();
 
             // Replace content
             mainContent.getChildren().setAll(newView);
@@ -186,6 +202,7 @@ public class DashboardSuperController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        topLabel.setText("Circulation Manager");
     }
 
 

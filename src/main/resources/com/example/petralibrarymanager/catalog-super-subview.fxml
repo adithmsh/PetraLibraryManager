@@ -8,9 +8,9 @@
    <children>
       <TableView fx:id="catalogsTableView" prefHeight="472.0" prefWidth="679.0">
         <columns>
-          <TableColumn fx:id="ISBNColumn" prefWidth="235.0" text="ISBN" />
-          <TableColumn fx:id="titleColumn" prefWidth="185.0" text="TITLE" />
-            <TableColumn fx:id="publisherNameColumn" prefWidth="232.0" text="PUBLISHER" />
+          <TableColumn fx:id="ISBNColumn" prefWidth="131.0" text="ISBN" />
+          <TableColumn fx:id="titleColumn" prefWidth="245.0" text="TITLE" />
+            <TableColumn fx:id="publisherNameColumn" prefWidth="276.0" text="PUBLISHER" />
             <TableColumn fx:id="publicationYearColumn" prefWidth="49.0" text="YEAR" />
             <TableColumn fx:id="totalCopiesColumn" prefWidth="51.0" text="TOTAL" />
             <TableColumn fx:id="availableCopiesColumn" prefWidth="73.0" text="AVAILABLE" />

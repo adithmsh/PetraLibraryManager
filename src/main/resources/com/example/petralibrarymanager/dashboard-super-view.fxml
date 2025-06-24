@@ -14,7 +14,7 @@
    <children>
       <VBox fx:id="sidebar1" alignment="CENTER" prefHeight="520.0" prefWidth="716.0" styleClass="dashboard-container-upper" StackPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" text="DASHBOARD">
+            <Label fx:id="topLabel" alignment="CENTER" contentDisplay="CENTER" text="Home">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>

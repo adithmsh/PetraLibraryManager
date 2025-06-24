@@ -73,7 +73,7 @@ public class CatalogController {
             return row;
         });
 
-
+        catalogsTableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         catalogsTableView.setItems(catalogs);
         loadCatalogs();
 

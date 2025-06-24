@@ -10,7 +10,6 @@
 
 <VBox prefHeight="744.0" prefWidth="832.0" styleClass="content-root" stylesheets="@styles/content.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label styleClass="section-title" text="HOME" />
       <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="840.0" prefWidth="832.0" vbarPolicy="NEVER">
          <content>
             <VBox prefHeight="458.0" prefWidth="791.0">

@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.StackPane?>
-
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label text="HELLO, THIS IS THE FINES" />
+      <TableView fx:id="finesTable" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="borrowerColumn" prefWidth="117.0" text="USER NAME" />
+          <TableColumn fx:id="bookColumn" prefWidth="147.0" text="TITLE" />
+            <TableColumn fx:id="amountColumn" prefWidth="85.0" text="AMOUNT" />
+            <TableColumn fx:id="dueDateColumn" prefWidth="160.0" text="DUE DATE" />
+            <TableColumn fx:id="statusColumn" prefWidth="90.0" text="STATUS" />
+        </columns>
+      </TableView>
    </children>
 </StackPane>

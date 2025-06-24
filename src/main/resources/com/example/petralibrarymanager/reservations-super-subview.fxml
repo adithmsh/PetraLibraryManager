@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.StackPane?>
 
-
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label text="HELLO, THIS IS THE RESERVATIONS" />
+      <TableView fx:id="reservationTable" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="bookTitleColumn" prefWidth="180.0" text="TITLE" />
+          <TableColumn fx:id="borrowerNameColumn" prefWidth="112.0" text="USER NAME" />
+            <TableColumn fx:id="reservationDateColumn" prefWidth="139.0" text="RESERVATION DATE" />
+            <TableColumn fx:id="statusColumn" minWidth="3.0" prefWidth="72.0" text="STATUS" />
+            <TableColumn fx:id="pickupDeadlineColumn" prefWidth="136.0" text="PICK UP DEADLINE" />
+        </columns>
+      </TableView>
    </children>
 </StackPane>

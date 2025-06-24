@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="627.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label text="HELLO, THIS IS THE CIRCULATIONS" />
+      <VBox prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <TableView fx:id="circulationTableView" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="bookTitleColumn" prefWidth="75.0" text="TITLE" />
+                <TableColumn fx:id="borrowerNameColumn" prefWidth="110.0" text="USER NAME" />
+                  <TableColumn fx:id="loanDateColumn" prefWidth="110.0" text="CHECKOUT DATE" />
+                  <TableColumn fx:id="dueDateColumn" prefWidth="71.0" text="DUE DATE" />
+                  <TableColumn fx:id="returnedDateColumn" prefWidth="104.0" text="RETURNED DATE" />
+                  <TableColumn fx:id="statusColumn" prefWidth="155.0" text="STATUS" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
    </children>
 </StackPane>
