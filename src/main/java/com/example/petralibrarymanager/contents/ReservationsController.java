@@ -13,10 +13,26 @@ import javafx.util.Callback;
 import javafx.scene.paint.Color;
 
 import java.time.LocalDate;
+import javafx.fxml.FXML;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.TableRow;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.Label;
+import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.beans.binding.Bindings;
+import javafx.scene.control.ChoiceDialog;
 
 public class ReservationsController {
 
-    @FXML private TableView<Reservation> reservationTable;
+    @FXML private TableView<Reservation> reservationsTable;
     @FXML private TableColumn<Reservation, String> bookTitleColumn;
     @FXML private TableColumn<Reservation, String> borrowerNameColumn;
     @FXML private TableColumn<Reservation, LocalDate> reservationDateColumn;
@@ -31,12 +47,78 @@ public class ReservationsController {
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
         pickupDeadlineColumn.setCellValueFactory(new PropertyValueFactory<>("pickupDeadline"));
 
-        reservationTable.setItems(getDummyReservations());
+        reservationsTable.setItems(getDummyReservations());
+
+        // Set up right-click context menu for each row
+        reservationsTable.setRowFactory(tv -> {
+            TableRow<Reservation> row = new TableRow<>();
+            ContextMenu contextMenu = new ContextMenu();
+
+            MenuItem changeStatusItem = new MenuItem("Change Status");
+            changeStatusItem.setOnAction(e -> {
+                Reservation selected = row.getItem();
+                if (selected != null) {
+                    showChangeStatusDialog(selected);
+                }
+            });
+
+            MenuItem deleteItem = new MenuItem("Delete");
+            deleteItem.setOnAction(e -> {
+                Reservation selected = row.getItem();
+                if (selected != null) {
+                    reservationsTable.getItems().remove(selected);
+                    // Optionally delete from database
+                }
+            });
+
+            contextMenu.getItems().addAll(changeStatusItem, deleteItem);
+
+            row.contextMenuProperty().bind(
+                    javafx.beans.binding.Bindings.when(row.emptyProperty())
+                            .then((ContextMenu) null)
+                            .otherwise(contextMenu)
+            );
+
+            return row;
+        });
+
         statusColumn.setCellFactory(TableViewUtil.getReservationStatusCellFactory());
 
 
-        reservationTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+        reservationsTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
     }
+
+    private void showChangeStatusDialog(Reservation reservation) {
+        String currentStatus = reservation.getStatus();
+        ChoiceDialog<String> dialog;
+
+        switch (currentStatus.toLowerCase()) {
+            case "pending":
+                dialog = new ChoiceDialog<>("cancelled", "cancelled");
+                break;
+            case "ready":
+                dialog = new ChoiceDialog<>("fulfilled", "fulfilled", "cancelled");
+                break;
+            default:
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Change Status");
+                alert.setHeaderText(null);
+                alert.setContentText("No status change allowed for: " + currentStatus);
+                alert.showAndWait();
+                return;
+        }
+
+        dialog.setTitle("Change Reservation Status");
+        dialog.setHeaderText("Current status: " + currentStatus);
+        dialog.setContentText("Choose new status:");
+
+        dialog.showAndWait().ifPresent(newStatus -> {
+            reservation.setStatus(newStatus);
+            reservationsTable.refresh();
+            // Save to DB if needed
+        });
+    }
+
 
     private ObservableList<Reservation> getDummyReservations() {
         return FXCollections.observableArrayList(

@@ -4,6 +4,7 @@ import com.example.petralibrarymanager.contents.CatalogController;
 import com.example.petralibrarymanager.contents.CirculationsController;
 import com.example.petralibrarymanager.contents.FinesController;
 import com.example.petralibrarymanager.contents.ReservationsController;
+import com.example.petralibrarymanager.contents.SettingsController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -86,8 +87,9 @@ public class DashboardSuperController {
     @FXML protected void onSettingClicked() {
         System.out.println("Setting  button is clicked.");
         try {
-            // Load new FXML
-            Node newView = FXMLLoader.load(getClass().getResource("settings-super-subview.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("settings-super-subview.fxml"));
+            loader.setController(new SettingsController());
+            Node newView = loader.load();
 
             // Replace content
             mainContent.getChildren().setAll(newView);

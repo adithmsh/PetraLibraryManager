@@ -14,6 +14,24 @@ import java.time.LocalDate;
 import javafx.scene.control.TableCell;
 import javafx.util.Callback;
 
+import java.time.LocalDate;
+import javafx.fxml.FXML;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.TableRow;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.Label;
+import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.beans.binding.Bindings;
+import javafx.scene.control.ChoiceDialog;
+
 public class FinesController {
 
     @FXML private TableView<Fine> finesTable;
@@ -44,7 +62,47 @@ public class FinesController {
         dueDateColumn.setCellValueFactory(new PropertyValueFactory<>("dueDate"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
 
+
         finesTable.setItems(dummyFines);
+        finesTable.setRowFactory(tv -> {
+            TableRow<Fine> row = new TableRow<>();
+            ContextMenu contextMenu = new ContextMenu();
+
+            // Change Status menu item (conditionally shown)
+            MenuItem changeStatusItem = new MenuItem("Mark as Paid");
+
+            changeStatusItem.setOnAction(event -> {
+                Fine selectedFine = row.getItem();
+                if (selectedFine != null && "unpaid".equalsIgnoreCase(selectedFine.getStatus())) {
+                    selectedFine.setStatus("paid");
+                    finesTable.refresh(); // Update table view
+                }
+            });
+
+            // Delete option
+            MenuItem deleteItem = new MenuItem("Delete");
+            deleteItem.setOnAction(event -> {
+                Fine selectedFine = row.getItem();
+                if (selectedFine != null) {
+                    finesTable.getItems().remove(selectedFine);
+                }
+            });
+
+            // Build menu conditionally
+            row.itemProperty().addListener((obs, oldItem, newItem) -> {
+                contextMenu.getItems().clear();
+                if (newItem != null) {
+                    if ("unpaid".equalsIgnoreCase(newItem.getStatus())) {
+                        contextMenu.getItems().add(changeStatusItem);
+                    }
+                    contextMenu.getItems().add(deleteItem);
+                }
+            });
+
+            row.setContextMenu(contextMenu);
+            return row;
+        });
+
         statusColumn.setCellFactory(FinesTableUtil.getStatusCellFactory());
 
         finesTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);

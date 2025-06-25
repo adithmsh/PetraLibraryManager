@@ -44,7 +44,7 @@ public class CirculationsController {
                 new Circulation("The Great Gatsby", "Alice", LocalDate.now().minusDays(7), LocalDate.now(), null),
                 new Circulation("1984", "Bob", LocalDate.now().minusDays(10), LocalDate.now().minusDays(3), LocalDate.now().minusDays(1)),
                 new Circulation("Brave New World", "Charlie", LocalDate.now().minusDays(15), LocalDate.now().minusDays(5), LocalDate.now().minusDays(2)),
-                new Circulation("Animal Farm", "Diana", LocalDate.now().minusDays(12), LocalDate.now().minusDays(2), LocalDate.now().minusDays(1))
+                new Circulation("Animal Farm", "Diana", LocalDate.now().minusDays(12), LocalDate.now().minusDays(2), LocalDate.now().minusDays(2))
         );
 
         statusColumn.setCellFactory(TableViewUtil.getCirculationStatusCellFactory());

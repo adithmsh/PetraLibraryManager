@@ -17,6 +17,10 @@ public class Reservation {
         this.pickupDeadline = pickupDeadline;
     }
 
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     public String getBookTitle() {
         return bookTitle;
     }

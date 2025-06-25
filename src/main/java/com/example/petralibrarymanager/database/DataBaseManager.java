@@ -9,7 +9,7 @@ public class DataBaseManager {
     public static Connection conn = null;
 
     // we store the user credentials once they have successfully login.
-    public static String identifier, email, password, role;
+    public static String identifier, username, email, password, role, createdAt;
 
     public static boolean connect(String user, String password) {
         try {

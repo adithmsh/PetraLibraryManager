@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="rootPane" prefHeight="589.0" prefWidth="894.0" stylesheets="@styles/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.petralibrarymanager.LoginController">
+<StackPane fx:id="rootPane" prefHeight="589.0" prefWidth="894.0" stylesheets="@styles/stylea.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.petralibrarymanager.LoginController">
    <children>
-      <VBox fx:id="loginVBox" alignment="CENTER" styleClass="login-section">
+      <VBox fx:id="loginVBox" alignment="CENTER" styleClass="vbox">
          <padding>
             <Insets bottom="50.0" left="20.0" right="20.0" top="50.0" />
          </padding>
@@ -26,7 +26,7 @@
                </VBox.margin>
             </Label>
             <Label styleClass="form-label" text="Username or Email" />
-            <TextField fx:id="identifierField" prefHeight="25.0" prefWidth="145.0" styleClass="custom-textfield">
+            <TextField fx:id="identifierField" prefHeight="25.0" prefWidth="145.0" styleClass="custom-textfield" stylesheets="@styles/style.css">
                <VBox.margin>
                   <Insets left="80.0" right="80.0" />
                </VBox.margin></TextField>
@@ -34,7 +34,7 @@
                <VBox.margin>
                   <Insets top="20.0" />
                </VBox.margin></Label>
-            <PasswordField fx:id="passwordField" styleClass="custom-textfield">
+            <PasswordField fx:id="passwordField" styleClass="custom-textfield" stylesheets="@styles/style.css">
                <VBox.margin>
                   <Insets left="80.0" right="80.0" />
                </VBox.margin></PasswordField>

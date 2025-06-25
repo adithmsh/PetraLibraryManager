@@ -17,6 +17,10 @@ public class Fine {
         this.status = status;
     }
 
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     public String getBorrowerName() {
         return borrowerName;
     }

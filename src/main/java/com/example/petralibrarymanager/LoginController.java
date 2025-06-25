@@ -67,8 +67,11 @@ public class LoginController {
 
                 if(rset.next()) {
                     DataBaseManager.identifier = identifier;
-                    DataBaseManager.password = password_hash;
+                    DataBaseManager.username = rset.getString("name");
+                    DataBaseManager.email = rset.getString("email");
+                    DataBaseManager.password = rset.getString("password_hash");
                     DataBaseManager.role = rset.getString("role");
+                    DataBaseManager.createdAt = rset.getString("created_at");
                     System.out.println("user is found! " + "privilege: " + DataBaseManager.role);
 
 
